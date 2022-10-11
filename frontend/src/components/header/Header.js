@@ -35,7 +35,7 @@ const Header = () => {
         </Link>
         <Link
           to={{
-            pathname: `/chat`,
+            pathname: `/chats`,
           }}
           target="_self"
         >
@@ -46,56 +46,6 @@ const Header = () => {
             referrerPolicy="no-referrer"
           />
         </Link>
-        {/* <div className="dropdown">
-          <div className="account">
-            <img
-              className="icon"
-              alt="Login"
-              src={login_solid}
-              referrerPolicy="no-referrer"
-            />
-            <img
-              className="icon"
-              alt="Login"
-              src={login_outline}
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="dropdown-content">
-            <Link
-              to={{
-                pathname: `/login`,
-              }}
-              target="_self"
-            >
-              Inloggen
-            </Link>
-            <Link
-              to={{
-                pathname: `/mijnaccount`,
-              }}
-              target="_self"
-            >
-              Mijn account
-            </Link>
-            <Link
-              to={{
-                pathname: `/eigenadvertenties`,
-              }}
-              target="_self"
-            >
-              Eigen advertenties
-            </Link>
-            <Link
-              to={{
-                pathname: `/faq`,
-              }}
-              target="_self"
-            >
-              FAQ
-            </Link>
-          </div>
-        </div> */}
 
         <div class="navbar">
           <div class="dropdown">
