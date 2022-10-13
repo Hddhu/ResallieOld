@@ -8,6 +8,7 @@ import Wishlist from "./views/wishlist/Wishlist";
 import MijnAccount from "./views/mijnAccount/MijnAccount";
 import EigenAdvertenties from "./views/eigenAdvertenties/EigenAdvertenties";
 import FAQ from "./views/faq/FAQ";
+import Registratie from "./views/registratiePagina/RegistratiePagina"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/mijnaccount" element={<MijnAccount />} />
           <Route path="/eigenadvertenties" element={<EigenAdvertenties />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/Registratie" element={<Registratie />} />
         </Routes>
       </div>
     </BrowserRouter>
