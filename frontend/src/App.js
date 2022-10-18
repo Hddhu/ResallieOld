@@ -8,7 +8,7 @@ import Wishlist from "./views/wishlist/Wishlist";
 import MijnAccount from "./views/mijnAccount/MijnAccount";
 import EigenAdvertenties from "./views/eigenAdvertenties/EigenAdvertenties";
 import FAQ from "./views/faq/FAQ";
-import Registratie from "./views/registratiePagina/RegistratiePagina"
+import Registratie from "./views/RegistratiePagina/RegistratiePagina"
 
 function App() {
   return (
