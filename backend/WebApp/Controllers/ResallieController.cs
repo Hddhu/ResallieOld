@@ -1,8 +1,10 @@
 ﻿using FireSharp.Config;
 using FireSharp.Interfaces;
-using FireSharp.Response;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
-using System.Net;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using WebApp.Models;
 
@@ -14,6 +16,7 @@ namespace WebApp.Controllers
         public ResallieController()
             : base()
         {
+            UpdateCollection();
         }
 
         public static readonly FirebaseConfig firebaseConfig = new FirebaseConfig
@@ -44,12 +47,13 @@ namespace WebApp.Controllers
 
         // POST: Address/Create
         [HttpPost]
-        public virtual ActionResult Create(FormCollection collection)
+        public virtual ActionResult Create(Dictionary<string,string> collection)
         {
             try
             {
                 // TODO: Add insert logic here
                 AddToFireBase(collection);
+                UpdateCollection();
                 return Redirect("~/");
             }
             catch (Exception ex)
@@ -59,13 +63,22 @@ namespace WebApp.Controllers
             }
         }
 
-        private void AddToFireBase(FormCollection collection)
+        private void AddToFireBase(Dictionary<string, string> collection)
         {
+            JObject obj = new JObject();   
+            foreach (var key in collection.Keys)
+            {
+                obj.Add(new JProperty(key, collection[key]));
+            }
+
+
             if (CheckDataFromControllerIsModelType(collection))
-                 client.Push(DatabaseReference, collection); 
+                 client.Push(DatabaseReference + collection[collection.Keys.Where(x => x.EndsWith("_id")).First()], obj); 
+                             //client.Push(DatabaseReference + collection[collection.Keys.Where(x => x.EndsWith("_id")).First()], collection); 
+
         }
 
-        private bool CheckDataFromControllerIsModelType(FormCollection collection)
+        private bool CheckDataFromControllerIsModelType(Dictionary<string, string> collection)
         {
             return true;
         }
@@ -83,7 +96,6 @@ namespace WebApp.Controllers
             try
             {
                 // TODO: Add update logic here
-
                 return RedirectToAction("Index");
             }
             catch
@@ -95,6 +107,7 @@ namespace WebApp.Controllers
         // GET: Address/Delete/5
         public ActionResult Delete(int id)
         {
+            client.Delete(DatabaseReference + id);
             return View();
         }
 
@@ -112,6 +125,24 @@ namespace WebApp.Controllers
             {
                 return View();
             }
+        }
+
+        public virtual void UpdateCollection()
+        {
+            var list = new List<Model>();
+            var data = JsonConvert.DeserializeObject<JObject>(client.Get("Accounts").Body);
+
+            foreach (var item in data.Properties())
+            {
+                foreach (var prop in ((JObject)item.Value).Properties())
+                {
+
+                }
+            }
+        }
+        public virtual dynamic Find()
+        {
+            throw new NotImplementedException();
         }
     }
 }

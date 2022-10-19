@@ -1,6 +1,7 @@
 ﻿
 using FireSharp.Response;
 using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using WebApp.Models;
 
@@ -11,7 +12,7 @@ namespace WebApp.Controllers
 
         // POST: Address/Create
         [HttpPost]
-        public override ActionResult Create(FormCollection collection)
+        public override ActionResult Create(Dictionary<string, string> collection)
         {
             try
             {
@@ -38,7 +39,7 @@ namespace WebApp.Controllers
 
         // POST: Address/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public new ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
@@ -55,7 +56,7 @@ namespace WebApp.Controllers
 
         // POST: Address/Delete/5
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public new ActionResult Delete(int id, FormCollection collection)
         {
             try
             {
