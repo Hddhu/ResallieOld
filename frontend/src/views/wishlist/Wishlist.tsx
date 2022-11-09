@@ -1,16 +1,16 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import "./LandingPage.css";
 
-const LandingPage = () => {
+const Wishlist = () => {
+  const isWishlist = "isWishlist";
   return (
-    <div className="page-container">
-      <Header />
-      <h1>Resallie landingpagina</h1>
+    <div>
+      <Header headerChange={isWishlist}/>
+      <h1>Resallie wishlist</h1>
       <Footer />
     </div>
   );
 };
 
-export default LandingPage;
+export default Wishlist;

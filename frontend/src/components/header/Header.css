@@ -1,12 +1,28 @@
 .header {
   border-bottom: 1px solid var(--mainGreen);
   margin: 0;
-  height: 3em;
+  height: 50px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 0px 40px;
+}
+
+.beeldlogo {
+  width: 3em;
+}
+
+.header_left a {
+  display: flex;
+  align-items: center;
+}
+
+.header_left {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 48px;
 }
 
 .header_right {
@@ -17,7 +33,7 @@
 
 .icon {
   height: 1.75em;
-  padding: 14px 16px;
+  padding: 0px 16px;
   margin: 0;
 }
 
@@ -30,7 +46,7 @@
   font-size: 16px;
   color: white;
   text-align: center;
-  padding: 14px 16px;
+  padding: 0px 16px;
   text-decoration: none;
 }
 
@@ -41,7 +57,7 @@
 
 .dropdown .icon {
   height: 1.75em;
-  padding: 14px 16px;
+  padding: 0px 16px;
   margin: 0;
 }
 

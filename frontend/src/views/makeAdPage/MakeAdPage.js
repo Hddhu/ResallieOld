@@ -1,15 +1,19 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
+import MakeAd from "../../components/makeAd/MakeAd";
 
-const LandingPage = () => {
+const MakeAdpage = () => {
   return (
     <div>
       <Header />
-      <h1>Resallie wishlist</h1>
+      <h1>Maak advertentie </h1>
+      <div className="overviewpage">
+        <MakeAd />
+      </div>
       <Footer />
     </div>
   );
 };
 
-export default LandingPage;
+export default MakeAdpage;

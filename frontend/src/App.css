@@ -3,6 +3,7 @@
 }
 
 h1 {
-  color: var(--mainGreen);
-  text-decoration: underline dotted var(--secondYellow);
+  color: var(--offBlack);
+  /* text-decoration: underline dotted var(--secondYellow); */
+  font-weight: normal;
 }

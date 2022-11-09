@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./views/landingPage/LandingPage";
@@ -8,6 +9,7 @@ import Wishlist from "./views/wishlist/Wishlist";
 import MijnAccount from "./views/mijnAccount/MijnAccount";
 import EigenAdvertenties from "./views/eigenAdvertenties/EigenAdvertenties";
 import FAQ from "./views/faq/FAQ";
+import MakeAdpage from "./views/makeAdPage/MakeAdPage";
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
           <Route path="/mijnaccount" element={<MijnAccount />} />
           <Route path="/eigenadvertenties" element={<EigenAdvertenties />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/maakadvertentie" element={<MakeAdpage />} />
         </Routes>
       </div>
     </BrowserRouter>

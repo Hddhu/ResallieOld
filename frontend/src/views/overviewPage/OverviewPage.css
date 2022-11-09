@@ -1,0 +1,10 @@
+.overviewpage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  margin-top: 15px;
+  width: 150px;
+}
