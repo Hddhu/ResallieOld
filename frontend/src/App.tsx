@@ -7,7 +7,7 @@ import Login from "./views/login/Login";
 import Chat from "./views/chat/Chat";
 import Wishlist from "./views/wishlist/Wishlist";
 import MijnAccount from "./views/mijnAccount/MijnAccount";
-import EigenAdvertenties from "./views/eigenAdvertenties/EigenAdvertenties";
+import OwnAds from "./views/ownAds/OwnAds";
 import FAQ from "./views/faq/FAQ";
 import MakeAdpage from "./views/makeAdPage/MakeAdPage";
 
@@ -22,7 +22,7 @@ function App() {
           <Route path="/chats" element={<Chat />} />
           <Route path="/verlanglijstje" element={<Wishlist />} />
           <Route path="/mijnaccount" element={<MijnAccount />} />
-          <Route path="/eigenadvertenties" element={<EigenAdvertenties />} />
+          <Route path="/eigenadvertenties" element={<OwnAds />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/maakadvertentie" element={<MakeAdpage />} />
         </Routes>

@@ -1,9 +1,9 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import "./EigenAdvertenties.css";
+import "./OwnAds.css";
 
-const EigenAdvertenties = () => {
+const OwnAds = () => {
   return (
     <div className="page-container">
       <Header />
@@ -13,4 +13,4 @@ const EigenAdvertenties = () => {
   );
 };
 
-export default EigenAdvertenties;
+export default OwnAds;

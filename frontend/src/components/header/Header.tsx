@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import wishlist_solid from "../../assets/header/Liked_Solid.png";
 import wishlist_outline from "../../assets/header/Liked_Outline.png";
@@ -15,20 +15,56 @@ interface DoesHeaderChange {
 }
 
 const Header = ({ headerChange }: DoesHeaderChange ) => {
-  var isChatPage: boolean = false;
-  var isWishlist: boolean = false;
-  var isLandingPage: boolean = false;
+  // var isChatPage: boolean = false;
+  // var isWishlist: boolean = false;
+  // var isLandingPage: boolean = false;
+  console.log(headerChange);
 
-  if (headerChange === "isChatPage") 
-  {isChatPage = true
-  console.log(isChatPage);
-  }  else if (headerChange === "isWishlist") {
-    isWishlist = true
-    console.log(isWishlist);
-      } else if (headerChange === "isLandigPage") {
-    isLandingPage = true
-    console.log(isLandingPage);
+  const [isWishlist, setWishlist] = useState(false);
+  const img_Wishlist = isWishlist ? wishlist_outline : wishlist_solid;
+  const [isChatPage, setChatPage] = useState(false);
+  const img_ChatPage = isChatPage ? chat_outline : chat_solid;
+  const [isProfile, setProfile] = useState(false);
+  const img_Profile = isProfile ? login_outline : login_solid;
+
+  function wishlistTrue() {
+    setWishlist(true);
   }
+  function wishlistFalse() {
+    setWishlist(false);
+  }
+
+  function chatTrue() {
+    setChatPage(true);
+  }
+  function chatFalse() {
+    setChatPage(false);
+  }
+  function profileTrue() {
+    setProfile(true);
+  }
+  function profileFalse() {
+    setProfile(false);
+  }
+
+  function setTrue() {
+    setWishlist(true);
+  }
+
+  // if (headerChange === "isWishlist") 
+  // {setWishlist(true);
+  // }
+
+  // if (headerChange === "isChatPage") 
+  // {isChatPage = true
+  // console.log(isChatPage);
+  // }  else if (headerChange === "isWishlist") {
+  //   isWishlist = true
+  //   console.log(isWishlist);
+  //     } else if (headerChange === "isLandigPage") {
+  //   isLandingPage = true
+  //   console.log(isLandingPage);
+  // }
 
   return (
     <div className="header">
@@ -58,13 +94,9 @@ const Header = ({ headerChange }: DoesHeaderChange ) => {
           <img
             className="icon"
             alt="Wishlist"
-            src={wishlist_solid}
-            referrerPolicy="no-referrer"
-          />
-          <img
-            className="icon"
-            alt="Wishlist"
-            src={wishlist_outline}
+            src={img_Wishlist}
+            onMouseOver={wishlistTrue}
+            onMouseLeave={wishlistFalse}
             referrerPolicy="no-referrer"
           />
         </Link>        
@@ -77,13 +109,9 @@ const Header = ({ headerChange }: DoesHeaderChange ) => {
           <img
             className="icon"
             alt="Chat"
-            src={chat_outline}
-            referrerPolicy="no-referrer"
-          />
-          <img
-            className="icon"
-            alt="Chat"
-            src={chat_solid}
+            src={img_ChatPage}
+            onMouseOver={chatTrue}
+            onMouseLeave={chatFalse}
             referrerPolicy="no-referrer"
           />
         </Link> 
@@ -94,13 +122,9 @@ const Header = ({ headerChange }: DoesHeaderChange ) => {
               <img
                 className="icon"
                 alt="Login"
-                src={login_solid}
-                referrerPolicy="no-referrer"
-              />
-              <img
-                className="icon"
-                alt="Login"
-                src={login_outline}
+                src={img_Profile}
+                onMouseOver={profileTrue}
+                onMouseLeave={profileFalse}
                 referrerPolicy="no-referrer"
               />
             </div>

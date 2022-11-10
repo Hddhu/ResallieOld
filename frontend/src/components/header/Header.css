@@ -84,20 +84,8 @@
   background-color: #ddd;
 }
 
-.dropdown .account img:last-child {
-  display: none;
-}
-
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-.dropdown:hover .icon:last-child {
-  display: block;
-}
-
-.dropdown:hover .icon:first-child {
-  display: none;
 }
 
 @media screen and (max-width: 600px) {
