@@ -6,7 +6,7 @@ import OverviewPage from "./views/overviewPage/OverviewPage";
 import Login from "./views/login/Login";
 import Chat from "./views/chat/Chat";
 import Wishlist from "./views/wishlist/Wishlist";
-import MijnAccount from "./views/mijnAccount/MijnAccount";
+import MijnAccount from "./views/myAccount/MyAccount";
 import OwnAds from "./views/ownAds/OwnAds";
 import FAQ from "./views/faq/FAQ";
 import MakeAdpage from "./views/makeAdPage/MakeAdPage";

@@ -6,7 +6,7 @@ import MakeAd from "../../components/makeAd/MakeAd";
 const MakeAdpage = () => {
   return (
     <div>
-      <Header />
+      <Header headerChange="makeAd"/>
       <h1>Maak advertentie </h1>
       <div className="overviewpage">
         <MakeAd />

@@ -6,7 +6,7 @@ import "./OwnAds.css";
 const OwnAds = () => {
   return (
     <div className="page-container">
-      <Header />
+      <Header headerChange="ownads"/>
       <h1>Resallie eigen advertenties</h1>
       <Footer />
     </div>

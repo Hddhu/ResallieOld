@@ -1,16 +1,16 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import "./MijnAccount.css";
+import "./FAQ.css";
 
-const Mijnaccount = () => {
+const FAQ = () => {
   return (
     <div className="page-container">
-      <Header />
-      <h1>Resallie mijn account</h1>
+      <Header headerChange="faq"/>
+      <h1>Resallie FAQ</h1>
       <Footer />
     </div>
   );
 };
 
-export default Mijnaccount;
+export default FAQ;

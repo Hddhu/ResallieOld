@@ -50,6 +50,14 @@
   text-decoration: none;
 }
 
+/* #wishlist{
+  display: flex;
+}
+
+#chat{
+  display: flex;
+} */
+
 .dropdown {
   float: left;
   overflow: hidden;

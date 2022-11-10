@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Header.css";
 import wishlist_solid from "../../assets/header/Liked_Solid.png";
 import wishlist_outline from "../../assets/header/Liked_Outline.png";
-import login_solid from "../../assets/header/Login_Solid.png";
-import login_outline from "../../assets/header/Login_Outline.png";
+import profile_solid from "../../assets/header/Profile_Solid.png";
+import profile_outline from "../../assets/header/Profile_Outline.png";
 import beeldlogo from "../../assets/logo's/Beeldmerk_Resallie.png";
 import chat_outline from "../../assets/header/Chat_Outline.png";
 import chat_solid from "../../assets/header/Chat_Solid.png";
@@ -15,56 +15,53 @@ interface DoesHeaderChange {
 }
 
 const Header = ({ headerChange }: DoesHeaderChange ) => {
-  // var isChatPage: boolean = false;
-  // var isWishlist: boolean = false;
-  // var isLandingPage: boolean = false;
+  const chat: string = "chat";
+  const wishlist: string = "wishlist";
+  const profile: string = "profile";
   console.log(headerChange);
 
-  const [isWishlist, setWishlist] = useState(false);
-  const img_Wishlist = isWishlist ? wishlist_outline : wishlist_solid;
-  const [isChatPage, setChatPage] = useState(false);
-  const img_ChatPage = isChatPage ? chat_outline : chat_solid;
-  const [isProfile, setProfile] = useState(false);
-  const img_Profile = isProfile ? login_outline : login_solid;
+  const [hoverWishlist, setWishlist] = useState(false);
+  const [hoverChat, setChat] = useState(false);
+  const [hoverProfile, setProfile] = useState(false);
 
-  function wishlistTrue() {
-    setWishlist(true);
-  }
-  function wishlistFalse() {
-    setWishlist(false);
-  }
+  // const [isWishlist, setWishlistPage] = useState(false);
+  // const [isChatPage, setChatPage] = useState(false);
 
-  function chatTrue() {
-    setChatPage(true);
-  }
-  function chatFalse() {
-    setChatPage(false);
-  }
-  function profileTrue() {
-    setProfile(true);
-  }
-  function profileFalse() {
-    setProfile(false);
+  const img_Profile = hoverProfile ? profile_outline : profile_solid;
+  const img_Wishlist = hoverWishlist ? wishlist_outline : wishlist_solid;
+  const img_ChatPage = hoverChat ? chat_outline : chat_solid;
+
+  function setTrue(page: string) {
+    if (page === wishlist) {
+      setWishlist(true);
+    } else if (page === chat) {
+      setChat(true);
+    } else if (page === profile) {
+      setProfile(true);
+    }
   }
 
-  // function setTrue() {
-  //   setWishlist(true);
-  // }
+  function setFalse(page: string) {
+    if (page === wishlist) {
+      setWishlist(false);
+    } else if (page === chat) {
+      setChat(false);
+    } else if (page === profile) {
+      setProfile(false);
+    }
+  }
 
-  // if (headerChange === "isWishlist") 
-  // {setWishlist(true);
-  // }
-
-  // if (headerChange === "isChatPage") 
-  // {isChatPage = true
-  // console.log(isChatPage);
-  // }  else if (headerChange === "isWishlist") {
-  //   isWishlist = true
-  //   console.log(isWishlist);
-  //     } else if (headerChange === "isLandigPage") {
-  //   isLandingPage = true
-  //   console.log(isLandingPage);
-  // }
+  if (headerChange === "wishlist") {
+    const change = document.getElementById('wishlist');
+    if (change !== null) {
+      change.style.setProperty("display", "none");
+    }
+  } else if (headerChange === "chat") {
+    const change = document.getElementById('chat');
+    if (change !== null) {
+      change.style.setProperty("display", "none");
+    }
+  }
 
   return (
     <div className="header">
@@ -86,6 +83,7 @@ const Header = ({ headerChange }: DoesHeaderChange ) => {
       <div className="header_right">
         <AddAdButton />
         <Link
+          id={wishlist}
           to={{
             pathname: `/verlanglijstje`,
           }}
@@ -93,14 +91,15 @@ const Header = ({ headerChange }: DoesHeaderChange ) => {
         >
           <img
             className="icon"
-            alt="Wishlist"
+            alt={wishlist}
             src={img_Wishlist}
-            onMouseOver={wishlistTrue}
-            onMouseLeave={wishlistFalse}
+            onMouseOver={() => setTrue(wishlist)}
+            onMouseLeave={() => setFalse(wishlist)}
             referrerPolicy="no-referrer"
           />
         </Link>        
         <Link
+          id={chat}
           to={{
             pathname: `/chats`,
           }}
@@ -108,10 +107,10 @@ const Header = ({ headerChange }: DoesHeaderChange ) => {
         >
           <img
             className="icon"
-            alt="Chat"
+            alt={chat}
             src={img_ChatPage}
-            onMouseOver={chatTrue}
-            onMouseLeave={chatFalse}
+            onMouseOver={() => setTrue(chat)}
+            onMouseLeave={() => setFalse(chat)}
             referrerPolicy="no-referrer"
           />
         </Link> 
@@ -121,10 +120,10 @@ const Header = ({ headerChange }: DoesHeaderChange ) => {
             <div className="account">
               <img
                 className="icon"
-                alt="Login"
+                alt={profile}
                 src={img_Profile}
-                onMouseOver={profileTrue}
-                onMouseLeave={profileFalse}
+                onMouseOver={() => setTrue(profile)}
+                onMouseLeave={() => setFalse(profile)}
                 referrerPolicy="no-referrer"
               />
             </div>

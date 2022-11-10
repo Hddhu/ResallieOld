@@ -1,16 +1,15 @@
 import React from "react";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import "./FAQ.css";
 
-const FAQ = () => {
+const LandingPage = () => {
   return (
-    <div className="page-container">
-      <Header />
-      <h1>Resallie FAQ</h1>
+    <div>
+      <Header headerChange="login"/>
+      <h1>Resallie loginpagina</h1>
       <Footer />
     </div>
   );
 };
 
-export default FAQ;
+export default LandingPage;
