@@ -47,9 +47,9 @@ const Header = ({ headerChange }: DoesHeaderChange ) => {
     setProfile(false);
   }
 
-  function setTrue() {
-    setWishlist(true);
-  }
+  // function setTrue() {
+  //   setWishlist(true);
+  // }
 
   // if (headerChange === "isWishlist") 
   // {setWishlist(true);

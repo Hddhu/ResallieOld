@@ -21,6 +21,7 @@
 .link {
   color: var(--offWhite);
   margin: 0px 5px;
+  font: 1em Quicksand;
 }
 
 .links {
